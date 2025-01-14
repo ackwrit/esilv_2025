@@ -16,7 +16,9 @@ class _MyBackgroundState extends State<MyBackground> {
         child: Container(
           height: MediaQuery.of(context).size.height,
           width: MediaQuery.of(context).size.width,
-          color: Colors.purple,
+          decoration: BoxDecoration(
+              image: DecorationImage(
+                  image: AssetImage("assets/street.jpg"), fit: BoxFit.fill)),
         ));
   }
 }
