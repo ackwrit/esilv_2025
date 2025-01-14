@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "837778246647",
+    "project_id": "esilv2025-974e9",
+    "storage_bucket": "esilv2025-974e9.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:837778246647:android:a3519f31111cdb70873cf2",
+        "android_client_info": {
+          "package_name": "com.example.first_app_2025_esilv"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCRoRjrHGhfQHzcqkOEveRKXvTtMjrqJvk"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
