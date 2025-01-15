@@ -44,6 +44,27 @@ class _MyHomePageState extends State<MyHomePage> {
   //variables
   TextEditingController mail = TextEditingController();
   TextEditingController pass = TextEditingController();
+
+  //fonctions
+  popUp() {
+    showDialog(
+        barrierDismissible: true,
+        context: context,
+        builder: (context) {
+          return AlertDialog.adaptive(
+            title: Text("Erreur"),
+            content: Text("Erreur sur le mail/mot de passe"),
+            actions: [
+              ElevatedButton(
+                  onPressed: () {
+                    Navigator.pop(context);
+                  },
+                  child: Text("ok"))
+            ],
+          );
+        });
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -122,7 +143,11 @@ class _MyHomePageState extends State<MyHomePage> {
                 child: const Text("Inscription"),
                 onPressed: () {
                   MyFirebaseHelper()
-                      .inscription(email: mail.text, password: pass.text);
+                      .inscription(email: mail.text, password: pass.text)
+                      .then((value) {})
+                      .catchError((onError) {
+                    popUp();
+                  });
                 })),
         const SizedBox(
           height: 10,
