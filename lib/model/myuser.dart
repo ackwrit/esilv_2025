@@ -1,4 +1,5 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:first_app_2025_esilv/controller/global.dart';
 import 'package:flutter/material.dart';
 
 class MyUser {
@@ -37,7 +38,7 @@ class MyUser {
     }
     email = dict["EMAIL"];
 
-    avatar = dict["AVATAR"] ?? "liensParDefaut";
+    avatar = dict["AVATAR"] ?? imageDefault;
     pseudo = dict["PSEUDO"] ?? "";
     mesFavoris = dict["FAVORIS"] ?? [];
   }

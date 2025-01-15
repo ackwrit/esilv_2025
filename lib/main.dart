@@ -1,6 +1,8 @@
+import 'package:first_app_2025_esilv/controller/global.dart';
 import 'package:first_app_2025_esilv/controller/myFiresbaseHelper.dart';
 import 'package:first_app_2025_esilv/controller/myanimation.dart';
 import 'package:first_app_2025_esilv/view/myBackground.dart';
+import 'package:first_app_2025_esilv/view/mydashboard.dart';
 import 'package:flutter/material.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'firebase_options.dart';
@@ -144,8 +146,13 @@ class _MyHomePageState extends State<MyHomePage> {
                 onPressed: () {
                   MyFirebaseHelper()
                       .inscription(email: mail.text, password: pass.text)
-                      .then((value) {})
-                      .catchError((onError) {
+                      .then((value) {
+                    setState(() {
+                      moi = value;
+                    });
+                    Navigator.push(context,
+                        MaterialPageRoute(builder: (context) => MyDasgBoard()));
+                  }).catchError((onError) {
                     popUp();
                   });
                 })),
@@ -155,7 +162,20 @@ class _MyHomePageState extends State<MyHomePage> {
         MyAnimation(
             delay: 5,
             child: ElevatedButton(
-                child: const Text("Connexion"), onPressed: () {})),
+                child: const Text("Connexion"),
+                onPressed: () {
+                  MyFirebaseHelper()
+                      .connexion(email: mail.text, password: pass.text)
+                      .then((value) {
+                    setState(() {
+                      moi = value;
+                    });
+                    Navigator.push(context,
+                        MaterialPageRoute(builder: (context) => MyDasgBoard()));
+                  }).catchError((onError) {
+                    popUp();
+                  });
+                })),
       ]),
     );
   }
