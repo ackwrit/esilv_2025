@@ -48,22 +48,30 @@ class _MyDasgBoardState extends State<MyDasgBoard> {
                             InputDecoration(hintText: "Entrer le pseudo")))
                 : Text(moi.pseudo!),
             Spacer(),
-            IconButton(
+            (isChangePseudo)?IconButton(
               onPressed: () {
                 setState(() {
-                  isChangePseudo = true;
-                  if (isChangePseudo == true) {
-                    setState(() {
+
+
+
                       moi.pseudo = pseudoController.text;
                       Map<String, dynamic> data = {"PSEUDO": moi.pseudo};
                       MyFirebaseHelper().updateUser(moi.id, data);
                       isChangePseudo = false;
+
                       ///
-                    });
-                  }
+
+
                 });
               },
-              icon: Icon(Icons.check),
+              icon:Icon(Icons.check),
+            ):IconButton(
+                onPressed: (){
+                  setState(() {
+                    isChangePseudo = true;
+                  });
+                },
+                icon: Icon(Icons.check)
             ),
           ])
         ]),
