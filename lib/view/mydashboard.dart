@@ -1,5 +1,6 @@
 import 'package:first_app_2025_esilv/controller/global.dart';
 import 'package:first_app_2025_esilv/controller/myFiresbaseHelper.dart';
+import 'package:first_app_2025_esilv/view/allPersonn.dart';
 import 'package:first_app_2025_esilv/view/myBackground.dart';
 import 'package:flutter/material.dart';
 
@@ -14,6 +15,7 @@ class _MyDasgBoardState extends State<MyDasgBoard> {
   //variable
   bool isChangePseudo = false;
   TextEditingController pseudoController = TextEditingController();
+  int current = 1;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -81,17 +83,44 @@ class _MyDasgBoardState extends State<MyDasgBoard> {
         elevation: 0,
       ),
       extendBodyBehindAppBar: true,
+      bottomNavigationBar: BottomNavigationBar(
+        currentIndex: current,
+          onTap: (tapped){
+              setState(() {
+                current = tapped;
+              });
+          },
+          items: [
+            BottomNavigationBarItem(
+              icon: Icon(Icons.person),
+              label: "Personnes"
+            ),
+            BottomNavigationBarItem(
+                label: "Cartes",
+                icon: Icon(Icons.map)
+            ),
+            BottomNavigationBarItem(
+                icon: Icon(Icons.settings),
+              label: "Paramètres"
+            )
+          ]
+      ),
       body: Stack(
         children: [
           MyBackground(),
-          Center(
-            child: Text(
-              moi.nom,
-              style: TextStyle(color: Colors.pink),
-            ),
-          )
+          bodyPage()
+
         ],
       ),
     );
+  }
+
+  Widget bodyPage(){
+    switch (current) {
+      case 0: return AllPerson();
+      case 1 : return Text("La carte");
+      case 2 : return Text("Paramètres");
+      default: return Text("Erreur");
+    }
   }
 }
