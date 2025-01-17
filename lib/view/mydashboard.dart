@@ -58,6 +58,7 @@ class _MyDasgBoardState extends State<MyDasgBoard> {
                       Map<String, dynamic> data = {"PSEUDO": moi.pseudo};
                       MyFirebaseHelper().updateUser(moi.id, data);
                       isChangePseudo = false;
+                      ///
                     });
                   }
                 });
