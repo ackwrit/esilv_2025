@@ -1,6 +1,7 @@
 import 'package:first_app_2025_esilv/controller/global.dart';
 import 'package:first_app_2025_esilv/controller/myFiresbaseHelper.dart';
 import 'package:first_app_2025_esilv/controller/myanimation.dart';
+import 'package:first_app_2025_esilv/controller/permissiongps.dart';
 import 'package:first_app_2025_esilv/view/myBackground.dart';
 import 'package:first_app_2025_esilv/view/mydashboard.dart';
 import 'package:flutter/material.dart';
@@ -12,6 +13,7 @@ void main() async {
   await Firebase.initializeApp(
     options: DefaultFirebaseOptions.currentPlatform,
   );
+  PermissionGps().init();
   runApp(const MyApp());
 }
 

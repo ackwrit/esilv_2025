@@ -1,6 +1,7 @@
 import 'package:first_app_2025_esilv/controller/global.dart';
 import 'package:first_app_2025_esilv/controller/myFiresbaseHelper.dart';
 import 'package:first_app_2025_esilv/view/allPersonn.dart';
+import 'package:first_app_2025_esilv/view/mapView.dart';
 import 'package:first_app_2025_esilv/view/myBackground.dart';
 import 'package:flutter/material.dart';
 
@@ -118,7 +119,7 @@ class _MyDasgBoardState extends State<MyDasgBoard> {
   Widget bodyPage(){
     switch (current) {
       case 0: return AllPerson();
-      case 1 : return Text("La carte");
+      case 1 : return Mapview();
       case 2 : return Text("Paramètres");
       default: return Text("Erreur");
     }
