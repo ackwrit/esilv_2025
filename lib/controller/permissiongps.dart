@@ -23,8 +23,8 @@ class PermissionGps {
       case LocationPermission.deniedForever: return Future.error("Vous ne souhaitez pas qu'on est accès à votre localisation");
       case LocationPermission.denied: return Geolocator.requestPermission().then((value)=>checkPermissionLocation(value));
       case LocationPermission.unableToDetermine: return Geolocator.requestPermission().then((value)=>checkPermissionLocation(value));
-      case LocationPermission.whileInUse: return Geolocator.getCurrentPosition(desiredAccuracy:LocationAccury.best);
-      case LocationPermission.always: return Geolocator.getCurrentPosition(desiredAccuracy:LocationAccury.best);
+      case LocationPermission.whileInUse: return Geolocator.getCurrentPosition(desiredAccuracy:LocationAccuracy.best);
+      case LocationPermission.always: return Geolocator.getCurrentPosition(desiredAccuracy:LocationAccuracy.best);
     }
   }
 

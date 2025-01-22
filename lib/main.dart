@@ -13,7 +13,7 @@ void main() async {
   await Firebase.initializeApp(
     options: DefaultFirebaseOptions.currentPlatform,
   );
-  PermissionGps().init();
+  
   runApp(const MyApp());
 }
 

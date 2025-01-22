@@ -3,6 +3,7 @@ import 'package:first_app_2025_esilv/controller/myFiresbaseHelper.dart';
 import 'package:first_app_2025_esilv/view/allPersonn.dart';
 import 'package:first_app_2025_esilv/view/mapView.dart';
 import 'package:first_app_2025_esilv/view/myBackground.dart';
+import 'package:first_app_2025_esilv/controller/loadingmap.dart';
 import 'package:flutter/material.dart';
 
 class MyDasgBoard extends StatefulWidget {
@@ -119,7 +120,7 @@ class _MyDasgBoardState extends State<MyDasgBoard> {
   Widget bodyPage(){
     switch (current) {
       case 0: return AllPerson();
-      case 1 : return Mapview();
+      case 1 : return LoadingMap();
       case 2 : return Text("Paramètres");
       default: return Text("Erreur");
     }
