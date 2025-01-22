@@ -24,6 +24,9 @@ class _LoadingMapState extends State<LoadingMap> {
 
 
 
+
+
+
         if(snap.connectionState == ConnectionState.waiting){
           return Center(
             child : CircularProgressIndicator.adaptive()
