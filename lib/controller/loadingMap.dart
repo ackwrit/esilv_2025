@@ -19,6 +19,11 @@ class _LoadingMapState extends State<LoadingMap> {
     return FutureBuilder<Position>(
       future: PermissionGps().init(),
       builder : (context,snap){
+
+
+
+
+
         if(snap.connectionState == ConnectionState.waiting){
           return Center(
             child : CircularProgressIndicator.adaptive()
